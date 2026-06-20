@@ -1,0 +1,12 @@
+---
+- name: Run Nginx Container
+  community.docker.docker_container:
+    name: ansible-nginx
+    image: nginx
+    state: started
+    restart_policy: always
+    recreate: true
+    published_ports:
+      - "8090:80"
+    volumes:
+      - "{{ playbook_dir }}/docker_role/files/index.html:/usr/share/nginx/html/index.html:ro"

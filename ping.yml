@@ -1,0 +1,12 @@
+---
+- hosts: local
+  gather_facts: yes
+
+  tasks:
+    - name: Show hostname
+      command: hostname
+      register: result
+
+    - name: Print hostname
+      debug:
+        var: result.stdout

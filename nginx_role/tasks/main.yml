@@ -1,0 +1,16 @@
+---
+- name: Install Nginx
+  dnf:
+    name: nginx
+    state: present
+
+- name: Start Nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: Deploy Custom Web Page
+  template:
+    src: index.html.j2
+    dest: /usr/share/nginx/html/index.html

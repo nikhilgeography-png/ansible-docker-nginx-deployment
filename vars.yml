@@ -1,0 +1,9 @@
+---
+- hosts: local
+  vars:
+    message: "Hello Nikhil"
+
+  tasks:
+    - name: Print Message
+      debug:
+        msg: "{{ message }}"

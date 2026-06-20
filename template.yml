@@ -1,0 +1,9 @@
+---
+- hosts: local
+  vars:
+    username: Nikhil
+
+  tasks:
+    - name: Show Template Message
+      debug:
+        msg: "Welcome {{ username }} to Ansible"

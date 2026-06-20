@@ -1,0 +1,9 @@
+---
+- hosts: local
+  become: yes
+
+  tasks:
+    - name: Create DevOps User
+      user:
+        name: devops
+        state: present
